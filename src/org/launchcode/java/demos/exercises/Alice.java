@@ -12,9 +12,10 @@ public class Alice {
         Scanner input = new Scanner(System.in);
         System.out.println("Search term:");
         String term = input.nextLine();
-        boolean found = alice.toLowerCase().contains(term);
+        boolean found = alice.toLowerCase().contains(term.toLowerCase());
         System.out.println("Term found: " + found);
-        int idx = alice.toLowerCase().indexOf(term);
+
+        int idx = alice.toLowerCase().indexOf(term.toLowerCase());
         System.out.println("Location: " + idx);
         System.out.println("length: " + term.length());
 //        String modifiedAlice = alice.replace(term, "");
