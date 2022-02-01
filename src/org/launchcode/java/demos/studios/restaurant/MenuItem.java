@@ -8,6 +8,7 @@ public class MenuItem {
     private String description;
     private String category;
     private boolean isNew;
+    // add field to keep track of when item was created
 
     public MenuItem(double price, String description, String category, boolean isNew) {
         this.price = price;
