@@ -16,13 +16,7 @@ public class Main {
         menu.addItem(soup);
         menu.addItem(hummus);
 
-        System.out.println("Menu (last updated " + menu.getLastUpdated() + ")");
-        System.out.println("----------------------\n");
-
-        for (MenuItem item : menu.getItems()) {
-            System.out.println(item.getDescription() + " - $" + item.getPrice());
-        }
-
+        System.out.println(menu);
     }
 
 }
