@@ -37,11 +37,15 @@ public class MenuItem {
         return category;
     }
 
+    public Date getCreated() {
+        return created;
+    }
+
     public boolean isNew() {
         Date now = new Date();
         long diff = now.getTime() - created.getTime();
         long days = diff / (1000 * 60 * 60 * 24);
-        return days < NEW_ITEM_DURATION_DAYS;
+        return days < NEW_ITEM_DURATION_DAYS && days >= 0;
     }
 
     public void setPrice(double price) {
@@ -65,7 +69,7 @@ public class MenuItem {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        org.launchcode.java.demos.studios.restaurant.MenuItem menuItem = (org.launchcode.java.demos.studios.restaurant.MenuItem) o;
+        MenuItem menuItem = (MenuItem) o;
         return Double.compare(menuItem.getPrice(), price) == 0 && Objects.equals(description, menuItem.getDescription()) && Objects.equals(category, menuItem.getCategory());
     }
 
