@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.studios.restaurant;
+package org.launchcode.java.demos.lessons.ch6.main;
 
 import java.util.Date;
 import java.util.Objects;
@@ -7,7 +7,6 @@ import java.util.Objects;
  * Created by Chris Bay
  */
 public class MenuItem {
-
     private double price;
     private String description;
     private String category;
@@ -66,8 +65,8 @@ public class MenuItem {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MenuItem menuItem = (MenuItem) o;
-        return Double.compare(menuItem.price, price) == 0 && Objects.equals(description, menuItem.description) && Objects.equals(category, menuItem.category);
+        org.launchcode.java.demos.studios.restaurant.MenuItem menuItem = (org.launchcode.java.demos.studios.restaurant.MenuItem) o;
+        return Double.compare(menuItem.getPrice(), price) == 0 && Objects.equals(description, menuItem.getDescription()) && Objects.equals(category, menuItem.getCategory());
     }
 
     @Override

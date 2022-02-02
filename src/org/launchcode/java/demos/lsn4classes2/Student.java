@@ -1,5 +1,7 @@
 package org.launchcode.java.demos.lsn4classes2;
 
+import java.util.Objects;
+
 public class Student {
 
     private static int nextStudentId = 1;
@@ -28,15 +30,23 @@ public class Student {
         return (this.name + " has a GPA of: " + this.gpa);
     }
 
+    public String getGradeLevel() {
+        if (this.numberOfCredits < 30) {
+            return "Freshman";
+        } else if (this.numberOfCredits < 60) {
+            return "Sophomore";
+        } else if (this.numberOfCredits < 90) {
+            return "Junior";
+        } else {
+            return "Senior";
+        }
+    }
 
-     //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
-//        // Determine the grade level of the student based on numberOfCredits
-//    }
-
-    // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
-        // Update the appropriate fields: numberOfCredits, gpa
+        double qualityScore = this.gpa * this.numberOfCredits;
+        qualityScore += courseCredits * grade;
+        this.numberOfCredits += courseCredits;
+        this.gpa = qualityScore / this.numberOfCredits;
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
@@ -75,6 +85,23 @@ public class Student {
 
     private void setNumberOfCredits(int numberOfCredits) {
         this.numberOfCredits = numberOfCredits;
+    }
+
+    public String toString() {
+        return this.name + " (ID: " + this.studentId + ", " + this.gpa + " GPA)";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return studentId == student.studentId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentId);
     }
 
     public static void main(String[] args) {
