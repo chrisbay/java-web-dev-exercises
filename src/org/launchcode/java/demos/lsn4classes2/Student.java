@@ -49,12 +49,6 @@ public class Student {
         this.gpa = qualityScore / this.numberOfCredits;
     }
 
-    // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
-    //  than just the class fields.
-
-    // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
-    //  Student objects equal.
-
     public String getName() {
         return name;
     }
