@@ -1,24 +1,16 @@
 package org.launchcode.java.demos.lsn4classes2;
 
-public class Teacher {
-    private String firstName;
-    private String lastName;
+public class Teacher extends Account {
+
     private String subject;
     private int yearsTeaching;
+    private String honorific;
 
-    public Teacher(String firstName, String lastName, String subject, int yearsTeaching) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Teacher(String firstName, String lastName, String honorific, String subject, int yearsTeaching) {
+        super(firstName, lastName);
+        this.honorific = honorific;
         this.subject = subject;
         this.yearsTeaching = yearsTeaching;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public void setSubject(String subject) {
@@ -29,19 +21,17 @@ public class Teacher {
         this.yearsTeaching = yearsTeaching;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
     public String getSubject() {
         return subject;
     }
 
     public int getYearsTeaching() {
         return yearsTeaching;
+    }
+
+    // teacher.getDisplayName();
+    @Override
+    public String getDisplayName() {
+        return this.honorific + " " + this.getFirstName() + " " + this.getLastName();
     }
 }
