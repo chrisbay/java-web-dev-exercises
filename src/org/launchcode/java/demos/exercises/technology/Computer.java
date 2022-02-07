@@ -11,6 +11,7 @@ public class Computer extends AbstractEntity {
     private final int yearManufactured;
 
     public Computer(String manufacturer, String model, int ramInGb, int yearManufactured) {
+        super();
         this.manufacturer = manufacturer;
         this.model = model;
         this.ramInGb = ramInGb;

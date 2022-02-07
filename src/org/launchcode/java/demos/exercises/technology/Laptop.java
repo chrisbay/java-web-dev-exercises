@@ -8,7 +8,11 @@ public class Laptop extends Computer {
     private boolean hasTouchscreen;
     private static final int MAX_RAM = 16;
 
-    public Laptop(String manufacturer, String model, int ramInGb, int yearManufactured, boolean hasTouchscreen) {
+    public Laptop(String manufacturer,
+                  String model,
+                  int ramInGb,
+                  int yearManufactured,
+                  boolean hasTouchscreen) {
         super(manufacturer, model, ramInGb, yearManufactured);
         this.hasTouchscreen = hasTouchscreen;
     }
@@ -24,7 +28,7 @@ public class Laptop extends Computer {
         return hasTouchscreen;
     }
 
-    public void hasTouchscreen(boolean hasTouchscreen) {
+    public void setHasTouchscreen(boolean hasTouchscreen) {
         this.hasTouchscreen = hasTouchscreen;
     }
 }

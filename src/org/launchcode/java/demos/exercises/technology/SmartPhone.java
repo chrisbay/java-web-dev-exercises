@@ -6,7 +6,7 @@ package org.launchcode.java.demos.exercises.technology;
 public class SmartPhone extends Computer {
 
     private boolean isWaterproof = false;
-    private int passcode;
+    private String passcode;
     private boolean isUnlocked = true;
 
     public SmartPhone(String manufacturer, String model, int ramInGb, int yearManufactured) {
@@ -22,16 +22,28 @@ public class SmartPhone extends Computer {
         return isWaterproof;
     }
 
-    public void setPasscode(int passcode) {
-        if (passcode < 999 || passcode > 9999) {
+    public void setPasscode(String passcode) {
+
+        try {
+            Integer.parseInt(passcode);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Invalid passcode. Passcodes may only contain digits.");
+        }
+
+        if (passcode.length() != 4) {
             throw new IllegalArgumentException("Invalid passcode. Passcodes must be 4 digits long");
         }
+
         this.passcode = passcode;
         this.isUnlocked = false;
     }
 
-    public boolean unlock(int codeEntered) {
-        if (codeEntered == this.passcode) {
+    public boolean isUnlocked() {
+        return isUnlocked;
+    }
+
+    public boolean unlock(String codeEntered) {
+        if (codeEntered.equals(this.passcode)) {
             this.isUnlocked = true;
             return true;
         }
