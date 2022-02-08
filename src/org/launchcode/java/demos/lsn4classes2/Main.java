@@ -6,7 +6,7 @@ package org.launchcode.java.demos.lsn4classes2;
 public class Main {
 
     public static void main (String[] args) {
-        Student account1 = new Student("Chris", "Bay");
+        Account account1 = new Student("Chris", "Bay");
         Teacher account2 = new Teacher("Jackson", "The Dog", "Mr.", "Being a good boy", 11);
 
         // example of "polymorphism"

@@ -28,6 +28,8 @@ public class House {
         id = numHouses;
     }
 
+
+
     public int getNumBedrooms() {
         return numBedrooms;
     }
